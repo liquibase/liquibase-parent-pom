@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.liquibase</groupId>
+    <artifactId>super-pom</artifactId>
+    <name>Super POM</name>
+    <packaging>pom</packaging>
+    <version>4.23.1</version>
+    <description>Super POM for all Extensions</description>
+
+    <properties>
+        <liquibase-core.version>${project.version}</liquibase-core.version>
+        <liquibase-commercial.version>${project.version}</liquibase-commercial.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-core</artifactId>
+                <version>${liquibase-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-commercial</artifactId>
+                <version>${liquibase-commercial.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>liquibase</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/liquibase/liquibase-super-pom</url>
+        </repository>
+    </distributionManagement>
+
+</project>
