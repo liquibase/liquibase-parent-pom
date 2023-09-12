@@ -1,3 +1,4 @@
-public class Dummy {
+package org.liquibase.superpom;
+interface Dummy {
     
 }
