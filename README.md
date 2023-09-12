@@ -10,6 +10,71 @@ This repository helps craft a parent/super POM file that becomes the central par
 - Easy inheritance for common settings and plugins.
 - Simplifies project management and distribution.
 
+## :wrench: Prerequisites
+
+GitHub actions must be configured to get artifacts from GitHub Package Manager:
+
+```yaml
+      # look for dependencies in maven
+      - name: maven-settings-xml-action
+        uses: whelk-io/maven-settings-xml-action@v20
+        with:
+          repositories: |
+            [
+              {
+                "id": "liquibase",
+                "url": "https://maven.pkg.github.com/liquibase/liquibase",
+                "releases": {
+                  "enabled": "false"
+                },
+                "snapshots": {
+                  "enabled": "true",
+                  "updatePolicy": "always"
+                }
+              },
+              {
+                "id": "liquibase-pro",
+                "url": "https://maven.pkg.github.com/liquibase/liquibase-pro",
+                "releases": {
+                  "enabled": "false"
+                },
+                "snapshots": {
+                  "enabled": "true",
+                  "updatePolicy": "always"
+                }
+              },
+                {
+                  "id": "liquibase-super-pom",
+                  "url": "https://maven.pkg.github.com/liquibase/liquibase-super-pom",
+                  "releases": {
+                    "enabled": "true"
+                  },
+                  "snapshots": {
+                    "enabled": "true",
+                    "updatePolicy": "always"
+                  }
+                }
+            ]
+          servers: |
+            [
+              {
+                "id": "liquibase-pro",
+                "username": "liquibot",
+                "password": "${{ secrets.LIQUIBOT_PAT }}"
+              },
+              {
+                "id": "liquibase",
+                "username": "liquibot",
+                "password": "${{ secrets.LIQUIBOT_PAT }}"
+              },
+              {
+                "id": "liquibase-super-pom",
+                "username": "liquibot",
+                "password": "${{ secrets.LIQUIBOT_PAT }}"
+              }
+            ]
+```
+
 ## :wrench: Usage
 
 1. Add the following to your Liquibase extension project's `pom.xml` to inherit from this super POM:
