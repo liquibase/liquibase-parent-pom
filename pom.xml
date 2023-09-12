@@ -6,6 +6,7 @@
     <name>Super POM</name>
     <version>0.0.1-SNAPSHOT</version>
     <description>Super POM for all Extensions</description>
+    <packaging>pom</packaging>
 
     <issueManagement>
         <url>https://github.com/liquibase/${project.artifactId}/issues</url>
