@@ -16,6 +16,6 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Publish package
-        run: mvn -B clean deploy
+        run: mvn -B clean deploy -DrepositoryId=liquibase-super-pom
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
