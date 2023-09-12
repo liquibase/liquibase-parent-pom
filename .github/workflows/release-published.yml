@@ -1,4 +1,4 @@
-name: Release Extension to Sonatype
+name: Release Super POM to GitHub Packages
 
 on:
   workflow_dispatch:
@@ -48,12 +48,8 @@ jobs:
 
       - name: Publish to GitHub Packages
         run: |
-          version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)          
-          mvn -B org.apache.maven.plugins:maven-deploy-plugin:3.0.0-M1:deploy-file \
-                      -Durl=https://maven.pkg.github.com/liquibase/liquibase-super-pom \
-                      -DpomFile=${{ env.artifact_id }}-${version}.pom \
-                      -DgeneratePom=true \
-                      -Dfile=${{ env.artifact_id }}-${version}.pom \
+          version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          mvn deploy:deploy-file -Dusername=liquibot -Dpassword=$GITHUB_TOKEN -DpomFile=${{ env.artifact_id }}-${version}.pom -Dfile=${{ env.artifact_id }}-${version}.pom -DrepositoryId=github -Durl=https://maven.pkg.github.com/liquibase/liquibase-super-pom       
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
