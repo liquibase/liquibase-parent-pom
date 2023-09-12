@@ -414,7 +414,7 @@
                         <version>${maven-javadoc-plugin.version}</version>
                         <configuration>
                             <author>false</author>
-                            <doctitle>Liquibase DBmarlin ${project.version} API</doctitle>
+                            <doctitle>Liquibase ${project.name} ${project.version} API</doctitle>
                             <quiet>true</quiet>
                             <doclint>none</doclint>
                             <encoding>UTF-8</encoding>
