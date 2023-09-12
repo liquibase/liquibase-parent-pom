@@ -1,7 +1,7 @@
 
 import org.junit.jupiter.api.Test;
 
-public class DummyTest {
+public class Superpom {
     
     @Test
     void whenTestCase_thenPass() {
