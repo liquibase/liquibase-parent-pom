@@ -83,7 +83,7 @@ GitHub actions must be configured to get artifacts from GitHub Package Manager:
     <parent>
         <groupId>org.liquibase</groupId>
         <artifactId>liquibase-super-pom</artifactId>
-        <version>1.0.0</version> <!-- Replace with the desired version -->
+        <version>0.0.1</version> <!-- Replace with the desired version -->
     </parent>
     ```
 
