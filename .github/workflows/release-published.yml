@@ -52,7 +52,7 @@ jobs:
           mvn -B org.apache.maven.plugins:maven-deploy-plugin:3.0.0-M1:deploy-file \
                       -Durl=https://maven.pkg.github.com/liquibase/liquibase-super-pom \
                       -DpomFile=${{ env.artifact_id }}-${version}.pom \
-                      -DgeneratePom=false \
+                      -DgeneratePom=true \
                       -Dfile=${{ env.artifact_id }}-${version}.pom \
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
