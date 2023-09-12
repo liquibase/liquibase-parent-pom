@@ -4,7 +4,6 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-super-pom</artifactId>
     <name>Super POM</name>
-    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <description>Super POM for all Extensions</description>
 
