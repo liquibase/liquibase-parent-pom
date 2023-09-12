@@ -1,8 +1,9 @@
 
 import org.junit.jupiter.api.Test;
-public class Test {
+
+public class DummyTest {
     
-    @Test
+    @DummyTest
     void whenTestCase_thenPass() {
     }
 }
