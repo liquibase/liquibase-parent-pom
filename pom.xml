@@ -4,8 +4,9 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-super-pom</artifactId>
     <name>Super POM</name>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <description>Super POM for all Extensions</description>
+    <packaging>pom</packaging>
 
     <issueManagement>
         <url>https://github.com/liquibase/${project.artifactId}/issues</url>
@@ -318,6 +319,11 @@
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
+                </repository>
+                <repository>
+                    <id>liquibase-super-pom</id>
+                    <name>This repository</name>
+                    <url>https://maven.pkg.github.com/liquibase/liquibase-super-pom</url>
                 </repository>
             </repositories>
         </profile>
