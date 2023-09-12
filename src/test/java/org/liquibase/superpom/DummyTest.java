@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class DummyTest {
     
-    @DummyTest
+    @Test
     void whenTestCase_thenPass() {
     }
 }
