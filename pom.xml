@@ -201,6 +201,28 @@
                             </execution>
                         </executions>
                     </plugin>
+                    <plugin>
+                        <groupId>com.coderplus.maven.plugins</groupId>
+                        <artifactId>copy-rename-maven-plugin</artifactId>
+                        <version>${copy-rename-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>copy</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy</goal>
+                                </goals>
+                                <configuration>
+                                    <fileSets>
+                                        <fileSet>
+                                            <sourceFile>${project.basedir}/pom.xml</sourceFile>
+                                            <destinationFile>${project.basedir}/target/${project.artifactId}-${project.version}.pom</destinationFile>
+                                        </fileSet>
+                                    </fileSets>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
@@ -225,50 +247,6 @@
                                 <goals>
                                     <goal>jar-no-fork</goal>
                                 </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${maven-javadoc-plugin.version}</version>
-                        <configuration>
-                            <author>false</author>
-                            <doctitle>Liquibase DBmarlin ${project.version} API</doctitle>
-                            <quiet>true</quiet>
-                            <doclint>none</doclint>
-                            <encoding>UTF-8</encoding>
-                            <jarOutputDirectory>${project.build.directory}</jarOutputDirectory>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>jar-javadoc</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                                <phase>package</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>com.coderplus.maven.plugins</groupId>
-                        <artifactId>copy-rename-maven-plugin</artifactId>
-                        <version>${copy-rename-maven-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>copy</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>copy</goal>
-                                </goals>
-                                <configuration>
-                                    <fileSets>
-                                        <fileSet>
-                                            <sourceFile>${project.basedir}/pom.xml</sourceFile>
-                                            <destinationFile>${project.build.directory}/${project.artifactId}-${project.version}.pom</destinationFile>
-                                        </fileSet>
-                                    </fileSets>
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
