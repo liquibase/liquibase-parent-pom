@@ -16,6 +16,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Publish package
-        run: mvn -B clean deploy -DrepositoryId=liquibase-super-pom
+        run: mvn -B clean deploy -Durl=https://maven.pkg.github.com/liquibase/liquibase-super-pom
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

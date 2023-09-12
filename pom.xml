@@ -64,11 +64,6 @@
 
     <distributionManagement>
         <repository>
-            <id>liquibase-super-pom</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/liquibase/liquibase-super-pom</url>
-        </repository>
-        <repository>
             <id>sonatype-nexus-staging</id>
             <name>Nexus Release Repository</name>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
