@@ -49,7 +49,7 @@ jobs:
       - name: Publish to GitHub Packages
         run: |
           version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          mvn deploy:deploy-file -DpomFile=${{ env.artifact_id }}-${version}.pom -Dfile=${{ env.artifact_id }}-${version}.pom -DrepositoryId=github -Durl=https://maven.pkg.github.com/liquibase/liquibase-super-pom       
+          mvn deploy:deploy-file -Dusername=liquibot -Dpassword=$GITHUB_TOKEN -DpomFile=${{ env.artifact_id }}-${version}.pom -Dfile=${{ env.artifact_id }}-${version}.pom -DrepositoryId=github -Durl=https://maven.pkg.github.com/liquibase/liquibase-super-pom       
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
