@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-super-pom</artifactId>
     <name>Super POM</name>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <description>Super POM for all Extensions</description>
     <packaging>pom</packaging>
 
@@ -51,6 +51,7 @@
         <jackson-core.version>2.15.2</jackson-core.version>
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
         <jupiter.version>5.10.0</jupiter.version>
+        <junit-platform.version>1.10.0</junit-platform.version>
         <jsonassert.version>1.5.1</jsonassert.version>
         <lombok.version>1.18.28</lombok.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
@@ -132,7 +133,7 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-engine</artifactId>
-            <version>${jupiter.version}</version>
+            <version>${junit-platform.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -531,5 +532,4 @@
             </repositories>
         </profile>
     </profiles>
-
 </project>
