@@ -74,6 +74,14 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>This repository</name>
+            <url>https://maven.pkg.github.com/liquibase/${project.artifactId}</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.liquibase</groupId>
