@@ -1,4 +1,4 @@
 package org.liquibase.superpom;
-interface Superpom {
+public interface Superpom {
     
 }
