@@ -62,7 +62,7 @@ jobs:
                       -Dsources=${{ env.artifact_id }}-${version}-sources.jar \
                       -Djavadoc=${{ env.artifact_id }}-${version}-javadoc.jar \
                       -Dfiles=${{ env.artifact_id }}-${version}-sources.jar.asc,${{ env.artifact_id }}-${version}-javadoc.jar.asc,${{ env.artifact_id }}-${version}.pom.asc \
-                      -Dtypes=jar.asc,jar.asc,jar.asc,pom.asc \
+                      -Dtypes=jar.asc,jar.asc,pom.asc \
                       -Dclassifiers=,sources,javadoc,
 
   maven-release:
