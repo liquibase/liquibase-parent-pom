@@ -25,6 +25,19 @@
         <url>http://www.liquibase.org</url>
     </organization>
 
+    <developers>
+        <developer>
+            <id>nvoxland</id>
+            <name>Nathan Voxland</name>
+            <email>nathan.voxland@liquibase.org</email>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>-6</timezone>
+        </developer>
+    </developers>
+
     <properties>
         <!-- Project build properties -->
         <maven.compiler.source>1.8</maven.compiler.source>
