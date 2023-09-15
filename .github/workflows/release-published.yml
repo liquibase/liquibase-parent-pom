@@ -1,4 +1,4 @@
-name: Release Parent POM to GitHub Packages
+name: Release Extension to Sonatype
 
 on:
   workflow_dispatch:
