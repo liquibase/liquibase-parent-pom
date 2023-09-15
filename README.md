@@ -18,7 +18,7 @@ This repository helps craft a parent POM file that becomes the central parent fo
     <parent>
         <groupId>org.liquibase</groupId>
         <artifactId>liquibase-parent-pom</artifactId>
-        <version>0.0.1</version> <!-- Replace with the desired version -->
+        <version>0.1.0</version> <!-- Replace with the desired version -->
     </parent>
     ```
 
