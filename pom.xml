@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Parent POM</name>
-    <version>0.4.0</version>
+    <version>0.5.0-SNAPSHOT</version>
     <description>Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -80,7 +80,7 @@
     <scm>
         <connection>scm:git:https://github.com/liquibase/${project.artifactId}.git</connection>
         <url>https://github.com/liquibase/${project.artifactId}</url>
-        <tag>liquibase-parent-pom-0.4.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
