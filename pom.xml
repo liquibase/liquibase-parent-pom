@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Parent POM</name>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.2-SNAPSHOT</version>
     <description>Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -58,6 +58,7 @@
         <!-- Plugin versions -->
         <assertj.version>3.24.2</assertj.version>
         <build-helper-maven-plugin.version>3.4.0</build-helper-maven-plugin.version>
+        <commons-io.version>2.11.0</commons-io.version>
         <copy-rename-maven-plugin.version>1.0.1</copy-rename-maven-plugin.version>
         <gmavenplus-plugin.version>3.0.0</gmavenplus-plugin.version>
         <groovy-all.version>3.0.19</groovy-all.version>
@@ -68,6 +69,8 @@
         <jupiter.version>5.10.0</jupiter.version>
         <junit-platform.version>1.10.0</junit-platform.version>
         <jsonassert.version>1.5.1</jsonassert.version>
+        <hsqldb.version>2.7.1</hsqldb.version>
+        <h2.version>2.1.214</h2.version>
         <liquibase-test-harness.version>1.0.9</liquibase-test-harness.version>
         <lombok.version>1.18.28</lombok.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
@@ -81,8 +84,11 @@
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <mockito-core.version>5.5.0</mockito-core.version>
         <mockito-junit-jupiter.version>5.5.0</mockito-junit-jupiter.version>
+        <mssql.version>12.2.0.jre8</mssql.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
+        <oracle.version>21.9.0.0</oracle.version>
         <org-json.version>20230618</org-json.version>
+        <postgresql.version>42.6.0</postgresql.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <snakeyaml.version>2.2</snakeyaml.version>
         <spock-core.version>2.4-M1-groovy-3.0</spock-core.version>
@@ -122,6 +128,11 @@
             <artifactId>liquibase-commercial</artifactId>
             <version>${liquibase.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -197,6 +208,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
@@ -208,7 +224,7 @@
             <version>${snakeyaml.version}</version>
             <scope>test</scope>
         </dependency>
-                <dependency>
+        <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
             <version>${groovy-all.version}</version>
@@ -250,6 +266,36 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-core.version}</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>${hsqldb.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>${mssql.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>${oracle.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
