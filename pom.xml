@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
-    <name>Parent POM</name>
+    <name>Liquibase Parent POM</name>
     <version>0.1.4-SNAPSHOT</version>
-    <description>Parent POM for all Extensions</description>
+    <description>Liquibase Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
 
@@ -30,11 +30,6 @@
             <id>liquibase</id>
             <name>Liquibase</name>
             <email>infosec@liquibase.com</email>
-            <roles>
-                <role>architect</role>
-                <role>developer</role>
-            </roles>
-            <timezone>-6</timezone>
         </developer>
     </developers>
 
