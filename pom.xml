@@ -90,6 +90,7 @@
         <spock-reports.version>2.5.1-groovy-3.0</spock-reports.version>
         <slf4j.version>2.0.9</slf4j.version>
         <versions-maven-plugin.version>2.16.0</versions-maven-plugin.version>
+        <proguard-activation>false</proguard-activation>
     </properties>
 
     <scm>
@@ -733,6 +734,49 @@
                     </snapshots>
                 </repository>
             </repositories>
+        </profile>
+        <profile>
+            <id>run-proguard</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.wvengen</groupId>
+                        <artifactId>proguard-maven-plugin</artifactId>
+                        <version>2.6.0</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>proguard</goal>
+                                </goals>
+                                <configuration>
+                                    <addMavenDescriptor>true</addMavenDescriptor>
+                                    <includeDependency>true</includeDependency>
+                                    <includeDependencyInjar>false</includeDependencyInjar>
+                                    <libs combine.children="append">
+                                        <lib>${java.home}/jmods/</lib>
+                                    </libs>
+                                    <options>
+                                        <option>
+                                            -keep class com.** {
+                                            *;
+                                            }
+                                            -keep class liquibase.** {
+                                            *;
+                                            }
+                                            -keep class org.liquibase.** {
+                                            *;
+                                            }
+                                        </option>
+                                    </options>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>
