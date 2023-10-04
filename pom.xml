@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Parent POM</name>
-    <version>0.1.3-SNAPSHOT</version>
+    <version>0.1.4-SNAPSHOT</version>
     <description>Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -27,9 +27,9 @@
 
     <developers>
         <developer>
-            <id>nvoxland</id>
-            <name>Nathan Voxland</name>
-            <email>nathan.voxland@liquibase.org</email>
+            <id>liquibase</id>
+            <name>Liquibase</name>
+            <email>infosec@liquibase.com</email>
             <roles>
                 <role>architect</role>
                 <role>developer</role>
