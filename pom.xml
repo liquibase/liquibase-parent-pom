@@ -734,5 +734,48 @@
                 </repository>
             </repositories>
         </profile>
+        <profile>
+            <id>run-proguard</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.wvengen</groupId>
+                        <artifactId>proguard-maven-plugin</artifactId>
+                        <version>2.6.0</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>proguard</goal>
+                                </goals>
+                                <configuration>
+                                    <addMavenDescriptor>true</addMavenDescriptor>
+                                    <includeDependency>true</includeDependency>
+                                    <includeDependencyInjar>false</includeDependencyInjar>
+                                    <libs combine.children="append">
+                                        <lib>${java.home}/jmods/</lib>
+                                    </libs>
+                                    <options>
+                                        <option>
+                                            -keep class com.** {
+                                            *;
+                                            }
+                                            -keep class liquibase.** {
+                                            *;
+                                            }
+                                            -keep class org.liquibase.** {
+                                            *;
+                                            }
+                                        </option>
+                                    </options>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>
