@@ -65,7 +65,7 @@
         <junit-platform.version>1.10.0</junit-platform.version>
         <jsonassert.version>1.5.1</jsonassert.version>
         <hsqldb.version>2.7.1</hsqldb.version>
-        <h2.version>2.1.214</h2.version>
+        <h2.version>2.2.224</h2.version>
         <liquibase-test-harness.version>1.0.9</liquibase-test-harness.version>
         <lombok.version>1.18.28</lombok.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
