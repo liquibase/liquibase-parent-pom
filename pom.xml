@@ -39,7 +39,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Liquibase -->
-        <liquibase.version>4.23.2</liquibase.version>
+        <liquibase.version>4.24.0</liquibase.version>
         <!-- SonarCloud -->
         <sonar.organization>liquibase</sonar.organization>
         <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
@@ -84,6 +84,7 @@
         <oracle.version>21.9.0.0</oracle.version>
         <org-json.version>20230618</org-json.version>
         <postgresql.version>42.6.0</postgresql.version>
+        <proguard-maven-plugin.version>2.6.0</proguard-maven-plugin.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <snakeyaml.version>2.2</snakeyaml.version>
         <spock-core.version>2.4-M1-groovy-3.0</spock-core.version>
@@ -507,7 +508,7 @@
         <profile>
             <id>snapshot</id>
             <properties>
-                <liquibase.version>4.23.2</liquibase.version>
+                <liquibase.version>4.24.0</liquibase.version>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -744,7 +745,7 @@
                     <plugin>
                         <groupId>com.github.wvengen</groupId>
                         <artifactId>proguard-maven-plugin</artifactId>
-                        <version>2.6.0</version>
+                        <version>${proguard-maven-plugin.version}</version>
                         <executions>
                             <execution>
                                 <goals>
