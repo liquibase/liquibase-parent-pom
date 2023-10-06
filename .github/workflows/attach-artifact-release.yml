@@ -95,4 +95,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
           ASSET_NAME_PREFIX: "${{ env.artifact_id }}-"
           ASSET_DIR: ./target
-      
+          
