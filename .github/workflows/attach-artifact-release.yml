@@ -45,21 +45,32 @@ jobs:
         id: get-artifact-id
         run: echo "artifact_id=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)" >> $GITHUB_ENV
 
-      - name: Get Release Tag
-        id: get-release-tag
-        run: echo "release_tag=$(./.github/get_draft_release.sh TAG)" >> $GITHUB_ENV
-        env:
-          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+      - name: Get latest draft release ID
+        id: get-release
+        run: |
+          LATEST_DRAFT_RELEASE=$(curl -X GET -H "Authorization: token ${{ secrets.BOT_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases?per_page=1" | jq -r 'if .[].draft == true then .[].id else empty end')
+          echo "Latest Draft Release ID: $LATEST_DRAFT_RELEASE"
+          echo "RELEASE_ID=$LATEST_DRAFT_RELEASE >> $GITHUB_ENV
 
-      - name: Delete Outdated Files from Draft Release
-        id: delete-outdated-release-asset
-        uses: mknejp/delete-release-assets@v1
-        with:
-          token: ${{ secrets.BOT_TOKEN }}
-          tag: ${{ env.release_tag }}
-          fail-if-no-assets: false
-          fail-if-no-release: false
-          assets: '*.*'
+      - name: List artifacts in release
+        if: env.RELEASE_ID != '' && env.RELEASE_ID != null
+        id: list-artifacts
+        run: |
+          RELEASE_ID="${{ env.RELEASE_ID }}"
+          ARTIFACTS=$(curl -X GET -H "Authorization: token ${{ secrets.BOT_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases/$RELEASE_ID/assets" | jq -r '.[].id')
+          echo "Artifacts to delete: $ARTIFACTS"
+          echo "ARTIFACTS_TO_DELETE=$ARTIFACTS >> $GITHUB_ENV
+
+
+      - name: Delete artifacts
+        if: env.ARTIFACTS_TO_DELETE != null
+        run: |
+          RELEASE_ID="${{ env.RELEASE_ID }}"
+          ARTIFACTS_TO_DELETE="${{ env.ARTIFACTS_TO_DELETE }}"
+          for artifact_id in $ARTIFACTS_TO_DELETE; do
+            curl -X DELETE -H "Authorization: token ${{ secrets.BOT_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases/assets/$artifact_id"
+            echo "Deleted artifact ID: $artifact_id"
+          done
 
       - name: Import GPG key
         id: import_gpg
