@@ -61,7 +61,6 @@ jobs:
           echo "Artifacts to delete: $ARTIFACTS"
           echo "ARTIFACTS_TO_DELETE=$ARTIFACTS" >> $GITHUB_ENV
 
-
       - name: Delete artifacts
         if: env.ARTIFACTS_TO_DELETE != null
         run: |
