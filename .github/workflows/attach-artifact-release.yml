@@ -50,7 +50,7 @@ jobs:
         run: |
           LATEST_DRAFT_RELEASE=$(curl -X GET -H "Authorization: token ${{ secrets.BOT_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases?per_page=1" | jq -r 'if .[].draft == true then .[].id else empty end')
           echo "Latest Draft Release ID: $LATEST_DRAFT_RELEASE"
-          echo "RELEASE_ID=$LATEST_DRAFT_RELEASE >> $GITHUB_ENV
+          echo "RELEASE_ID=$LATEST_DRAFT_RELEASE" >> $GITHUB_ENV
 
       - name: List artifacts in release
         if: env.RELEASE_ID != '' && env.RELEASE_ID != null
@@ -59,7 +59,7 @@ jobs:
           RELEASE_ID="${{ env.RELEASE_ID }}"
           ARTIFACTS=$(curl -X GET -H "Authorization: token ${{ secrets.BOT_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases/$RELEASE_ID/assets" | jq -r '.[].id')
           echo "Artifacts to delete: $ARTIFACTS"
-          echo "ARTIFACTS_TO_DELETE=$ARTIFACTS >> $GITHUB_ENV
+          echo "ARTIFACTS_TO_DELETE=$ARTIFACTS" >> $GITHUB_ENV
 
 
       - name: Delete artifacts
