@@ -87,8 +87,8 @@
         <proguard-maven-plugin.version>2.6.0</proguard-maven-plugin.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <snakeyaml.version>2.2</snakeyaml.version>
-        <spock-core.version>2.4-M1-groovy-4.0</spock-core.version>
-        <spock-reports.version>2.5.1-groovy-4.0</spock-reports.version>
+        <spock-core.version>2.4-M1-groovy-3.0</spock-core.version>
+        <spock-reports.version>2.5.1-groovy-3.0</spock-reports.version>
         <slf4j.version>2.0.9</slf4j.version>
         <versions-maven-plugin.version>2.16.0</versions-maven-plugin.version>
     </properties>
@@ -221,7 +221,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.groovy</groupId>
+            <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
             <version>${groovy-all.version}</version>
             <scope>test</scope>
