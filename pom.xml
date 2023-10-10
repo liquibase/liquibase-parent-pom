@@ -85,7 +85,7 @@
         <org-json.version>20230618</org-json.version>
         <postgresql.version>42.6.0</postgresql.version>
         <proguard-maven-plugin.version>2.6.0</proguard-maven-plugin.version>
-        <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+        <sonar-maven-plugin.version>3.10.0.2594</sonar-maven-plugin.version>
         <snakeyaml.version>2.2</snakeyaml.version>
         <spock-core.version>2.4-M1-groovy-3.0</spock-core.version>
         <spock-reports.version>2.5.1-groovy-3.0</spock-reports.version>
