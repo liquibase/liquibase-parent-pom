@@ -94,8 +94,8 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/liquibase/${project.artifactId}.git</connection>
-        <url>https://github.com/liquibase/${project.artifactId}</url>
+        <connection>scm:git:${project.url}.git</connection>
+        <url>${project.url}</url>
         <tag>HEAD</tag>
     </scm>
 
