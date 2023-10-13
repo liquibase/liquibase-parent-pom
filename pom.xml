@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Liquibase Parent POM</name>
-    <version>0.3.0-SNAPSHOT</version>
+    <version>0.2.4-SNAPSHOT</version>
     <description>Liquibase Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -767,9 +767,6 @@
         </profile>
         <profile>
             <id>run-proguard</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -800,6 +797,11 @@
                                             *;
                                             }
                                         </option>
+                                        <option>-dontwarn software.amazon.**</option>
+                                        <option>-dontwarn org.slf4j.**</option>
+                                        <option>-dontwarn org.apache.**</option>
+                                        <option>-dontwarn io.netty.**</option>
+                                        <option>-dontwarn com.fasterxml.**</option>
                                     </options>
                                 </configuration>
                             </execution>
