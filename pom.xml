@@ -53,6 +53,7 @@
         <!-- Plugin versions -->
         <assertj.version>3.24.2</assertj.version>
         <build-helper-maven-plugin.version>3.4.0</build-helper-maven-plugin.version>
+        <commons-io.version>2.11.0</commons-io.version>
         <copy-rename-maven-plugin.version>1.0.1</copy-rename-maven-plugin.version>
         <gmavenplus-plugin.version>3.0.0</gmavenplus-plugin.version>
         <groovy-all.version>3.0.19</groovy-all.version>
@@ -112,6 +113,11 @@
     </distributionManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
