@@ -376,8 +376,8 @@
                 <executions>
                     <execution>
                         <goals>
-                        <goal>integration-test</goal>
-                        <goal>verify</goal>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
                         </goals>
                     </execution>
                 </executions>
