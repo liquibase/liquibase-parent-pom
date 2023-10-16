@@ -777,6 +777,24 @@
                                             -keep class io.netty.** {
                                             *;
                                             }
+                                            -keep class org.reactivestreams.** {
+                                            *;
+                                            }
+                                            -keep class com.google.** {
+                                            *;
+                                            }
+                                            -keep class com.fasterxml.jackson.** {
+                                            *;
+                                            }
+                                            -keep class org.apache.** {
+                                            *;
+                                            }
+                                            -keep class org.bouncycastle.** {
+                                            *;
+                                            }
+                                            -keep class org.slf4j.** {
+                                            *;
+                                            }
                                         </option>
                                         <option>-dontwarn software.amazon.**</option>
                                         <option>-dontwarn org.slf4j.**</option>
