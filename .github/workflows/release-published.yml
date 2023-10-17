@@ -11,5 +11,5 @@ permissions:
   
 jobs:
   release:
-    uses: liquibase/build-logic/.github/workflows/pom-release-published.yml@DAT-15862
+    uses: liquibase/build-logic/.github/workflows/pom-release-published.yml@v0.5.0
     secrets: inherit
