@@ -292,7 +292,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Implementation-Title>${project.artifactId}-${project.version}</Implementation-Title>
+                            <Implementation-Title>${project.name}</Implementation-Title>
                             <Bundle-Vendor>Liquibase</Bundle-Vendor>
                             <Bundle-Version>${project.version}</Bundle-Version>
                         </manifestEntries>
