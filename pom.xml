@@ -94,7 +94,7 @@
     <scm>
         <connection>scm:git:${project.url}.git</connection>
         <url>${project.url}</url>
-        <tag>liquibase-parent-pom-0.2.6</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
