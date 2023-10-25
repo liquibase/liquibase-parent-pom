@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Liquibase Parent POM</name>
-    <version>0.4.0-SNAPSHOT</version>
+    <version>0.3.1-SNAPSHOT</version>
     <description>Liquibase Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -48,6 +48,8 @@
         <sonar.sources>src/main/java</sonar.sources>
         <sonar.tests>src/test/java</sonar.tests>
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
+        <sonar.projectDescription>${project.description}</sonar.projectDescription>
         <!-- Plugin versions -->
         <assertj.version>3.24.2</assertj.version>
         <build-helper-maven-plugin.version>3.4.0</build-helper-maven-plugin.version>
@@ -528,9 +530,6 @@
             <id>snapshot</id>
             <properties>
                 <liquibase.version>4.24.0</liquibase.version>
-                <sonar.projectName>${project.name}</sonar.projectName>
-                <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
-                <sonar.projectDescription>${project.description}</sonar.projectDescription>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -586,11 +585,6 @@
         </profile>
         <profile>
             <id>coverage</id>
-            <properties>
-                <sonar.projectName>${project.name}</sonar.projectName>
-                <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
-                <sonar.projectDescription>${project.description}</sonar.projectDescription>
-            </properties>
             <activation>
                 <property>
                     <name>env.CI</name>
@@ -681,11 +675,6 @@
         <profile>
             <!-- Required for deployment to Sonatype -->
             <id>release</id>
-            <properties>
-                <sonar.projectName>${project.name}</sonar.projectName>
-                <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
-                <sonar.projectDescription>${project.description}</sonar.projectDescription>
-            </properties>
             <activation>
                 <property>
                     <name>env.CI</name>
@@ -729,11 +718,6 @@
         </profile>
         <profile>
             <id>remote-repositories</id>
-            <properties>
-                <sonar.projectName>${project.name}</sonar.projectName>
-                <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
-                <sonar.projectDescription>${project.description}</sonar.projectDescription>
-            </properties>
             <activation>
                 <property>
                     <name>env.CI</name>
@@ -759,11 +743,6 @@
         </profile>
         <profile>
             <id>run-proguard</id>
-            <properties>
-                <sonar.projectName>${project.name}</sonar.projectName>
-                <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
-                <sonar.projectDescription>${project.description}</sonar.projectDescription>
-            </properties>
             <build>
                 <plugins>
                     <plugin>
