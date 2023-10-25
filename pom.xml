@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Liquibase Parent POM</name>
-    <version>0.2.2-SNAPSHOT</version>
+    <version>0.2.7-SNAPSHOT</version>
     <description>Liquibase Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -42,25 +42,22 @@
         <liquibase.version>4.24.0</liquibase.version>
         <!-- SonarCloud -->
         <sonar.organization>liquibase</sonar.organization>
-        <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
-        <sonar.projectName>${project.name}</sonar.projectName>
-        <sonar.projectDescription>${project.description}</sonar.projectDescription>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.scm.provider>git</sonar.scm.provider>
         <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
         <sonar.sources>src/main/java</sonar.sources>
         <sonar.tests>src/test/java</sonar.tests>
+        <sonar.coverage.jacoco.xmlReportPaths>target/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <!-- Plugin versions -->
         <assertj.version>3.24.2</assertj.version>
         <build-helper-maven-plugin.version>3.4.0</build-helper-maven-plugin.version>
-        <commons-io.version>2.11.0</commons-io.version>
+        <commons-io.version>2.14.0</commons-io.version>
         <copy-rename-maven-plugin.version>1.0.1</copy-rename-maven-plugin.version>
-        <gmavenplus-plugin.version>3.0.0</gmavenplus-plugin.version>
+        <gmavenplus-plugin.version>3.0.2</gmavenplus-plugin.version>
         <groovy-all.version>3.0.19</groovy-all.version>
         <hamcrest.version>1.3</hamcrest.version>
-        <jackson-core.version>2.15.2</jackson-core.version>
+        <jackson.version>2.15.2</jackson.version>
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
-        <jackson-dataformat-yaml.version>2.15.2</jackson-dataformat-yaml.version>
         <jupiter.version>5.10.0</jupiter.version>
         <junit-platform.version>1.10.0</junit-platform.version>
         <jsonassert.version>1.5.1</jsonassert.version>
@@ -72,18 +69,18 @@
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-failsafe-plugin.version>3.1.2</maven-failsafe-plugin.version>
         <maven-release-plugin.version>3.0.1</maven-release-plugin.version>
-        <maven-shade-plugin.version>3.5.0</maven-shade-plugin.version>
+        <maven-shade-plugin.version>3.5.1</maven-shade-plugin.version>
         <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
         <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <mockito-core.version>5.5.0</mockito-core.version>
-        <mockito-junit-jupiter.version>5.5.0</mockito-junit-jupiter.version>
-        <mssql.version>12.2.0.jre8</mssql.version>
+        <mockito-junit-jupiter.version>5.6.0</mockito-junit-jupiter.version>
+        <mssql.version>12.4.1.jre8</mssql.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <oracle.version>21.9.0.0</oracle.version>
-        <org-json.version>20230618</org-json.version>
+        <org-json.version>20231013</org-json.version>
         <postgresql.version>42.6.0</postgresql.version>
         <proguard-maven-plugin.version>2.6.0</proguard-maven-plugin.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
@@ -113,188 +110,172 @@
         </snapshotRepository>
     </distributionManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
-            <version>${liquibase.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-commercial</artifactId>
-            <version>${liquibase.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons-io.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>${jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-engine</artifactId>
-            <version>${junit-platform.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>${hamcrest.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>${assertj.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${mockito-core.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <version>${mockito-junit-jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.athaydes</groupId>
-            <artifactId>spock-reports</artifactId>
-            <version>${spock-reports.version}</version>
-            <scope>test</scope>
-            <!-- this avoids affecting your version of Groovy/Spock -->
-            <exclusions>
-                <exclusion>
-                    <groupId>*</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${slf4j.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-jdk14</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>${snakeyaml.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>${groovy-all.version}</version>
-            <scope>test</scope>
-            <type>pom</type>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.codehaus.groovy</groupId>
-                    <artifactId>groovy-testng</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.spockframework</groupId>
-            <artifactId>spock-core</artifactId>
-            <version>${spock-core.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-test-harness</artifactId>
-            <version>${liquibase-test-harness.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>${org-json.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.skyscreamer</groupId>
-            <artifactId>jsonassert</artifactId>
-            <version>${jsonassert.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson-core.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>${h2.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>${hsqldb.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>${mssql.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle.database.jdbc</groupId>
-            <artifactId>ojdbc8</artifactId>
-            <version>${oracle.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>${postgresql.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-core</artifactId>
+                <version>${liquibase.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-commercial</artifactId>
+                <version>${liquibase.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-engine</artifactId>
+                <version>${junit-platform.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-all</artifactId>
+                <version>${hamcrest.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito-core.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>${mockito-junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.athaydes</groupId>
+                <artifactId>spock-reports</artifactId>
+                <version>${spock-reports.version}</version>
+                <scope>test</scope>
+                <!-- this avoids affecting your version of Groovy/Spock -->
+                <exclusions>
+                    <exclusion>
+                        <groupId>*</groupId>
+                        <artifactId>*</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${snakeyaml.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${groovy-all.version}</version>
+                <scope>test</scope>
+                <type>pom</type>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-testng</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-core</artifactId>
+                <version>${spock-core.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-test-harness</artifactId>
+                <version>${liquibase-test-harness.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>${org-json.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.skyscreamer</groupId>
+                <artifactId>jsonassert</artifactId>
+                <version>${jsonassert.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>${hsqldb.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.microsoft.sqlserver</groupId>
+                <artifactId>mssql-jdbc</artifactId>
+                <version>${mssql.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle.database.jdbc</groupId>
+                <artifactId>ojdbc8</artifactId>
+                <version>${oracle.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <resources>
@@ -304,6 +285,34 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven-assembly-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Implementation-Title>${project.name}</Implementation-Title>
+                            <Bundle-Vendor>Liquibase</Bundle-Vendor>
+                            <Bundle-Version>${project.version}</Bundle-Version>
+                        </manifestEntries>
+                    </archive>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <finalName>${project.artifactId}-${project.version}</finalName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>assemble-all</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>${maven-resources-plugin.version}</version>
@@ -317,7 +326,6 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
-                    <optimize>true</optimize>
                     <debug>true</debug>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <compilerArgs>
@@ -358,19 +366,26 @@
                 <configuration>
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <reportFormat>plain</reportFormat>
+                    <systemPropertyVariables>
+                        <com.athaydes.spockframework.report.outputDir>${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>${maven-failsafe-plugin.version}</version>
+                <configuration>
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                    <reportFormat>plain</reportFormat>
+                </configuration>
                 <executions>
-                <execution>
-                    <goals>
-                    <goal>integration-test</goal>
-                    <goal>verify</goal>
-                    </goals>
-                </execution>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -382,7 +397,7 @@
                             <Specification-Title>Liquibase</Specification-Title>
                             <Specification-Version>${liquibase.version}</Specification-Version>
                             <Specification-Vendor>Liquibase.org</Specification-Vendor>
-                            <Implementation-Title>${project.name}</Implementation-Title>
+                            <Implementation-Title>${project.artifactId}-${project.version}</Implementation-Title>
                             <Implementation-Version>${project.version}</Implementation-Version>
                             <Implementation-Vendor>Liquibase</Implementation-Vendor>
                         </manifestEntries>
@@ -456,7 +471,7 @@
                                 </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <manifestEntries>
-                                        <Implementation-Title>${project.name}</Implementation-Title>
+                                        <Implementation-Title>${project.artifactId}-${project.version}</Implementation-Title>
                                         <Bundle-Vendor>Liquibase</Bundle-Vendor>
                                         <Bundle-Version>${project.version}</Bundle-Version>
                                     </manifestEntries>
@@ -510,6 +525,9 @@
             <id>snapshot</id>
             <properties>
                 <liquibase.version>4.24.0</liquibase.version>
+                <sonar.projectName>${project.name}</sonar.projectName>
+                <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
+                <sonar.projectDescription>${project.description}</sonar.projectDescription>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -521,19 +539,13 @@
                      <version>${liquibase.version}</version>
                      <scope>test</scope>
                  </dependency>
-                 <dependency>
-                     <groupId>com.fasterxml.jackson.dataformat</groupId>
-                     <artifactId>jackson-dataformat-yaml</artifactId>
-                     <version>${jackson-dataformat-yaml.version}</version>
-                     <scope>test</scope>
-                 </dependency>
              </dependencies>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.liquibase.ext</groupId>
                         <artifactId>liquibase-sdk-maven-plugin</artifactId>
-                        <version>0.10.13</version>
+                        <version>0.10.20</version>
                         <configuration>
                             <githubToken>${env.GITHUB_TOKEN}</githubToken>
                         </configuration>
@@ -571,6 +583,11 @@
         </profile>
         <profile>
             <id>coverage</id>
+            <properties>
+                <sonar.projectName>${project.name}</sonar.projectName>
+                <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
+                <sonar.projectDescription>${project.description}</sonar.projectDescription>
+            </properties>
             <activation>
                 <property>
                     <name>env.CI</name>
@@ -665,40 +682,17 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-assembly-plugin</artifactId>
-                        <version>${maven-assembly-plugin.version}</version>
-                        <configuration>
-                            <archive>
-                                <manifestEntries>
-                                    <Implementation-Title>${project.name}</Implementation-Title>
-                                    <Bundle-Vendor>Liquibase</Bundle-Vendor>
-                                    <Bundle-Version>${project.version}</Bundle-Version>
-                                </manifestEntries>
-                            </archive>
-                            <appendAssemblyId>false</appendAssemblyId>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>${project.name}-${project.version}</finalName>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>assemble-all</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>single</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
                 </plugins>
             </build>
         </profile>
         <profile>
             <!-- Required for deployment to Sonatype -->
             <id>release</id>
+            <properties>
+                <sonar.projectName>${project.name}</sonar.projectName>
+                <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
+                <sonar.projectDescription>${project.description}</sonar.projectDescription>
+            </properties>
             <activation>
                 <property>
                     <name>env.CI</name>
@@ -742,6 +736,11 @@
         </profile>
         <profile>
             <id>remote-repositories</id>
+            <properties>
+                <sonar.projectName>${project.name}</sonar.projectName>
+                <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
+                <sonar.projectDescription>${project.description}</sonar.projectDescription>
+            </properties>
             <activation>
                 <property>
                     <name>env.CI</name>
@@ -767,9 +766,11 @@
         </profile>
         <profile>
             <id>run-proguard</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+            <properties>
+                <sonar.projectName>${project.name}</sonar.projectName>
+                <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
+                <sonar.projectDescription>${project.description}</sonar.projectDescription>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -799,7 +800,36 @@
                                             -keep class org.liquibase.** {
                                             *;
                                             }
+                                            -keep class software.amazon.** {
+                                            *;
+                                            }
+                                            -keep class io.netty.** {
+                                            *;
+                                            }
+                                            -keep class org.reactivestreams.** {
+                                            *;
+                                            }
+                                            -keep class com.google.** {
+                                            *;
+                                            }
+                                            -keep class com.fasterxml.jackson.** {
+                                            *;
+                                            }
+                                            -keep class org.apache.** {
+                                            *;
+                                            }
+                                            -keep class org.bouncycastle.** {
+                                            *;
+                                            }
+                                            -keep class org.slf4j.** {
+                                            *;
+                                            }
                                         </option>
+                                        <option>-dontwarn software.amazon.**</option>
+                                        <option>-dontwarn org.slf4j.**</option>
+                                        <option>-dontwarn org.apache.**</option>
+                                        <option>-dontwarn io.netty.**</option>
+                                        <option>-dontwarn com.fasterxml.**</option>
                                     </options>
                                 </configuration>
                             </execution>
