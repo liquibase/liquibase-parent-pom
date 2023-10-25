@@ -47,7 +47,7 @@
         <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
         <sonar.sources>src/main/java</sonar.sources>
         <sonar.tests>src/test/java</sonar.tests>
-        <sonar.coverage.jacoco.xmlReportPaths>target/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <!-- Plugin versions -->
         <assertj.version>3.24.2</assertj.version>
         <build-helper-maven-plugin.version>3.4.0</build-helper-maven-plugin.version>
