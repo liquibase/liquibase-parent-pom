@@ -1,4 +1,6 @@
 # :star: Liquibase Parent POM
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fliquibase%2Fliquibase-parent-pom.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fliquibase%2Fliquibase-parent-pom?ref=badge_shield)
+
 
 Simplifying Extension Dependency Management with Parent POM
 
@@ -49,3 +51,6 @@ Contributions are welcome! Please follow these steps:
     ```
 
 5. Create a pull request to the `main` branch of this repository.
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fliquibase%2Fliquibase-parent-pom.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fliquibase%2Fliquibase-parent-pom?ref=badge_large)
