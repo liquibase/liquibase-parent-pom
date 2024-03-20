@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Liquibase Parent POM</name>
-    <version>0.4.0-SNAPSHOT</version>
+    <version>0.3.7-SNAPSHOT</version>
     <description>Liquibase Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -89,7 +89,6 @@
         <snakeyaml.version>2.2</snakeyaml.version>
         <spock-core.version>2.4-M1-groovy-3.0</spock-core.version>
         <spock-reports.version>2.5.1-groovy-3.0</spock-reports.version>
-        <slf4j.version>2.0.9</slf4j.version>
         <versions-maven-plugin.version>2.16.1</versions-maven-plugin.version>
     </properties>
 
@@ -681,12 +680,8 @@
                                             -keep class org.bouncycastle.** {
                                             *;
                                             }
-                                            -keep class org.slf4j.** {
-                                            *;
-                                            }
                                         </option>
                                         <option>-dontwarn software.amazon.**</option>
-                                        <option>-dontwarn org.slf4j.**</option>
                                         <option>-dontwarn org.apache.**</option>
                                         <option>-dontwarn io.netty.**</option>
                                         <option>-dontwarn com.fasterxml.**</option>
