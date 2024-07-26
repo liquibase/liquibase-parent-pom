@@ -1,6 +1,7 @@
 name: Attach Artifact to Release
 
 on:
+  workflow_call:
   pull_request:
     types:
       - closed
