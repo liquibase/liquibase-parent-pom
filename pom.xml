@@ -606,7 +606,7 @@
             </build>
         </profile>
         <profile>
-            <id>liquibase-aws-sdk</id>
+            <id>aws</id>
             <dependencyManagement>
                 <dependencies>
                     <dependency>
