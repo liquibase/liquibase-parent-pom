@@ -287,6 +287,10 @@
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
+        <resource>
+            <directory>src/main/resources/filtered-resources</directory>
+            <filtering>false</filtering>
+        </resource>
         </resources>
         <plugins>
             <plugin>
@@ -301,8 +305,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <doCheck>true</doCheck>
-                    <doUpdate>true</doUpdate>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
                     <branch>${git.branch}</branch> <!-- Use the correct branch name -->
                     <timestampFormat>${maven.build.timestamp.format}</timestampFormat>
                 </configuration>
@@ -315,13 +319,13 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>generate-build-properties</id>
-                        <phase>validate</phase>
+                        <id>filter-resources</id>
+                        <phase>process-resources</phase>
                         <goals>
-                            <goal>copy-resources</goal>
+                            <goal>resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <outputDirectory>${project.build.directory}/filtered-resources</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>src/main/resources</directory>
