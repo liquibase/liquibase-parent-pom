@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Liquibase Parent POM</name>
-    <version>0.5.0-SNAPSHOT</version>
+    <version>0.4.3-SNAPSHOT</version>
     <description>Liquibase Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -35,6 +35,7 @@
 
     <properties>
         <!-- Project build properties -->
+        <buildNumber>${env.GITHUB_RUN_ID}</buildNumber>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -52,6 +53,7 @@
         <sonar.projectDescription>${project.description}</sonar.projectDescription>
         <!-- Plugin versions -->
         <assertj.version>3.24.2</assertj.version>
+        <buildnumber-maven-plugin.version>3.2.0</buildnumber-maven-plugin.version>
         <build-helper-maven-plugin.version>3.4.0</build-helper-maven-plugin.version>
         <commons-io.version>2.15.1</commons-io.version>
         <copy-rename-maven-plugin.version>1.0.1</copy-rename-maven-plugin.version>
@@ -438,6 +440,24 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>${build-helper-maven-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>${buildnumber-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
+                    <timestampFormat>${maven.build.timestamp.format}</timestampFormat>
+                </configuration>
             </plugin>
         </plugins>
     </build>
