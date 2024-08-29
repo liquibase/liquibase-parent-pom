@@ -52,7 +52,7 @@
         <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
         <sonar.projectDescription>${project.description}</sonar.projectDescription>
         <!-- Plugin versions -->
-        <assertj.version>3.24.2</assertj.version>
+        <assertj.version>3.26.3</assertj.version>
         <buildnumber-maven-plugin.version>3.2.0</buildnumber-maven-plugin.version>
         <build-helper-maven-plugin.version>3.4.0</build-helper-maven-plugin.version>
         <commons-io.version>2.15.1</commons-io.version>
