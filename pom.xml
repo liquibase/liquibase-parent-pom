@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Liquibase Parent POM</name>
-    <version>4.29.2-SNAPSHOT</version>
+    <version>0.5.0-SNAPSHOT</version>
     <description>Liquibase Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -280,7 +280,13 @@
             <artifactId>liquibase-test-harness</artifactId>
             <version>${liquibase-test-harness.version}</version>
             <scope>test</scope>
-        </dependency> 
+        </dependency>
+        <dependency>
+            <groupId>org.liquibase.ext</groupId>
+            <artifactId>liquibase-disable-analytics</artifactId>
+            <version>1.0.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
