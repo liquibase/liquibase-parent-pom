@@ -30,6 +30,11 @@ upload_asset() {
     local file=$1
     local size=$2
     local content_type=$3
+    echo curl \
+      -H "Authorization: token $GITHUB_TOKEN" \
+      -H "Content-Length: $size"\
+      -H "Content-Type: $content_type" \
+      --data-binary @$file "$UPLOAD_URL?name=$(basename $file)"
     curl \
       -H "Authorization: token $GITHUB_TOKEN" \
       -H "Content-Length: $size"\
@@ -53,5 +58,6 @@ for val in "${StringArray[@]}"; do
         exit 1;
     fi
     MIME=$(file -b --mime-type $FILE)
+    echo upload_asset $FILE $SIZE $MIME
     upload_asset $FILE $SIZE $MIME
 done
