@@ -4,7 +4,7 @@
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Liquibase Parent POM</name>
-    <version>4.30.0-SNAPSHOT</version>
+    <version>0.5.1-SNAPSHOT</version>
     <description>Liquibase Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -390,42 +390,6 @@
                         </manifestEntries>
                     </archive>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>build-javadoc-jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>javadoc</classifier>
-                            <classesDirectory>${project.basedir}</classesDirectory>
-                            <includes>
-                                <include>readme.javadocs.txt</include>
-                            </includes>
-                            <archive>
-                                <addMavenDescriptor>false</addMavenDescriptor>
-                            </archive>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-sources-jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>sources</classifier>
-                            <classesDirectory>${project.basedir}</classesDirectory>
-                            <includes>
-                                <include>readme.sources.txt</include>
-                            </includes>
-                            <archive>
-                                <addMavenDescriptor>false</addMavenDescriptor>
-                            </archive>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
@@ -677,6 +641,58 @@
             <id>run-proguard</id>
             <build>
                 <plugins>
+                    <plugin>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>${maven-jar-plugin.version}</version>
+                        <configuration>
+                            <archive>
+                                <manifestEntries>
+                                    <Specification-Title>Liquibase</Specification-Title>
+                                    <Specification-Version>${liquibase.version}</Specification-Version>
+                                    <Specification-Vendor>Liquibase.org</Specification-Vendor>
+                                    <Implementation-Title>${project.artifactId}-${project.version}</Implementation-Title>
+                                    <Implementation-Version>${project.version}</Implementation-Version>
+                                    <Implementation-Vendor>Liquibase</Implementation-Vendor>
+                                </manifestEntries>
+                            </archive>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>build-javadoc-jar</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                                <configuration>
+                                    <classifier>javadoc</classifier>
+                                    <classesDirectory>${project.basedir}</classesDirectory>
+                                    <includes>
+                                        <include>readme.javadocs.txt</include>
+                                    </includes>
+                                    <archive>
+                                        <addMavenDescriptor>false</addMavenDescriptor>
+                                    </archive>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>build-sources-jar</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                                <configuration>
+                                    <classifier>sources</classifier>
+                                    <classesDirectory>${project.basedir}</classesDirectory>
+                                    <includes>
+                                        <include>readme.sources.txt</include>
+                                    </includes>
+                                    <archive>
+                                        <addMavenDescriptor>false</addMavenDescriptor>
+                                    </archive>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
                     <plugin>
                         <groupId>com.github.wvengen</groupId>
                         <artifactId>proguard-maven-plugin</artifactId>
