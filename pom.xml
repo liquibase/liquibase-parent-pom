@@ -68,7 +68,7 @@
         <hsqldb.version>2.7.2</hsqldb.version>
         <h2.version>2.3.232</h2.version>
         <liquibase-test-harness.version>1.0.10</liquibase-test-harness.version>
-        <lombok.version>1.18.30</lombok.version>
+        <lombok.version>1.18.36</lombok.version>
         <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
