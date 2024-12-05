@@ -37,9 +37,7 @@ upload_asset() {
       --data-binary @$file "$UPLOAD_URL?name=$(basename $file)"
 }
 
-declare -a StringArray=(".pom" ".pom.asc" ".pom.md5" ".pom.sha1" \
- "-javadoc.jar" "-javadoc.jar.asc" "-javadoc.jar.md5" "-javadoc.jar.sha1" \
- "-sources.jar" "-sources.jar.asc" "-sources.jar.md5" "-sources.jar.sha1" )
+declare -a StringArray=(".pom" ".pom.asc" ".pom.md5" ".pom.sha1" )
 
 for val in "${StringArray[@]}"; do
     FILE=$ASSET_DIR/$ASSET_NAME_PREFIX$VERSION$val
