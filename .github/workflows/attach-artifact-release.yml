@@ -85,8 +85,6 @@ jobs:
           gpg -K
           version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           ./.github/sign_artifact.sh ./target/${{ env.artifact_id }}-${version}.pom
-          ./.github/sign_artifact.sh ./target/${{ env.artifact_id }}-${version}-javadoc.jar
-          ./.github/sign_artifact.sh ./target/${{ env.artifact_id }}-${version}-sources.jar
 
       - name: Attach Files to Draft Release
         id: upload-release-asset
