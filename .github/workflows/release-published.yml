@@ -13,3 +13,4 @@ jobs:
   release:
     uses: liquibase/build-logic/.github/workflows/pom-release-published.yml@do-not-release-sources-and-javadocs-for-pom
     secrets: inherit
+
