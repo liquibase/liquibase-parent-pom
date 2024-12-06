@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-test:
-    uses: liquibase/build-logic/.github/workflows/os-extension-test.yml@vmain
+    uses: liquibase/build-logic/.github/workflows/os-extension-test.yml@main
     secrets: inherit
     with:
       java: '[21]'
