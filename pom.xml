@@ -741,6 +741,9 @@
                                     </libs>
                                     <options>
                                         <option>
+                                            -keep class org.graalvm.** {
+                                            *;
+                                            }
                                             -keep class com.** {
                                             *;
                                             }
