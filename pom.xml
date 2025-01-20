@@ -353,8 +353,7 @@
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <reportFormat>plain</reportFormat>
                     <systemPropertyVariables>
-                        <com.athaydes.spockframework.report.outputDir>
-                            ${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
+                        <com.athaydes.spockframework.report.outputDir>${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -366,8 +365,7 @@
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <reportFormat>plain</reportFormat>
                     <systemPropertyVariables>
-                        <com.athaydes.spockframework.report.outputDir>
-                            ${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
+                        <com.athaydes.spockframework.report.outputDir>${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
                     </systemPropertyVariables>
                 </configuration>
                 <executions>
@@ -550,8 +548,7 @@
                                     <fileSets>
                                         <fileSet>
                                             <sourceFile>${project.basedir}/pom.xml</sourceFile>
-                                            <destinationFile>
-                                                ${project.basedir}/target/${project.artifactId}-${project.version}.pom</destinationFile>
+                                            <destinationFile>${project.basedir}/target/${project.artifactId}-${project.version}.pom</destinationFile>
                                         </fileSet>
                                     </fileSets>
                                 </configuration>
@@ -789,8 +786,7 @@
                                         <option>-dontwarn com.fasterxml.**</option>
                                         <option>-dontwarn org.graalvm.**</option>
                                         <option>-dontwarn com.oracle.**</option>
-                                        <option>-keepattributes
-                                            *Annotation*,EnclosingMethod,Signature</option>
+                                        <option>-keepattributes*Annotation*,EnclosingMethod,Signature</option>
                                     </options>
                                 </configuration>
                             </execution>
