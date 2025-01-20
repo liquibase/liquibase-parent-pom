@@ -786,7 +786,7 @@
                                         <option>-dontwarn com.fasterxml.**</option>
                                         <option>-dontwarn org.graalvm.**</option>
                                         <option>-dontwarn com.oracle.**</option>
-                                        <option>-keepattributes*Annotation*,EnclosingMethod,Signature</option>
+                                        <option>-keepattributes *Annotation*,EnclosingMethod,Signature</option>
                                     </options>
                                 </configuration>
                             </execution>
