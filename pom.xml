@@ -776,6 +776,24 @@
                                             -keep class org.slf4j.** {
                                             *;
                                             }
+                                            -keep class com.azure.** {
+                                            *;
+                                            }
+                                            -keep class reactor.** {
+                                            *;
+                                            }
+                                            -keep class com.nimbusds.** {
+                                            *;
+                                            }
+                                            -keep class net.minidev.** {
+                                            *;
+                                            }
+                                            -keep class org.objectweb.** {
+                                            *;
+                                            }
+                                            -keep class reactor.netty.** {
+                                            *;
+                                            }
                                         </option>
                                         <option>-dontwarn software.amazon.**</option>
                                         <option>-dontwarn org.slf4j.**</option>
@@ -784,6 +802,19 @@
                                         <option>-dontwarn com.fasterxml.**</option>
                                         <option>-dontwarn org.graalvm.**</option>
                                         <option>-dontwarn com.oracle.**</option>
+                                        <option>-dontwarn io.micrometer.**</option>
+                                        <option>-dontwarn kotlin.**</option>
+                                        <option>-dontwarn org.jetbrains.**</option>
+                                        <option>-dontwarn org.opensaml.**</option>
+                                        <option>-dontwarn com.google.**</option>
+                                        <option>-dontwarn org.bouncycastle.**</option>
+                                        <option>-dontwarn javax.servlet.**</option>
+                                        <option>-dontwarn jakarta.servlet.**</option>
+                                        <option>-dontwarn reactor.**</option>
+                                        <option>-dontwarn org.joda.**</option>
+                                        <option>-dontwarn net.shibboleth.**</option>
+                                        <option>-dontwarn org.cryptomator.**</option>
+                                        <option>-dontwarn java.lang.invoke.**</option>
                                         <option>-keepattributes *Annotation*,EnclosingMethod,Signature</option>
                                     </options>
                                 </configuration>
