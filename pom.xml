@@ -830,7 +830,7 @@
                         <version>1.4.1</version>
                         <executions>
                             <execution>
-                                <id>enforce-license</id>
+                                <id>enforce-javadocs-sources-txt-files</id>
                                 <goals>
                                     <goal>enforce</goal>
                                 </goals>
