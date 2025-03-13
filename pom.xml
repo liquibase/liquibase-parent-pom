@@ -671,6 +671,10 @@
         </profile>
         <profile>
             <id>run-proguard</id>
+            <properties>
+                <maven.source.skip>true</maven.source.skip>
+                <maven.javadoc.skip>true</maven.javadoc.skip>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -817,6 +821,28 @@
                                         <option>-dontwarn java.lang.invoke.**</option>
                                         <option>-keepattributes *Annotation*,EnclosingMethod,Signature</option>
                                     </options>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <version>1.4.1</version>
+                        <executions>
+                            <execution>
+                                <id>enforce-javadocs-sources-txt-files</id>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <requireFilesExist>
+                                            <files>
+                                                <file>${project.basedir}/readme.javadocs.txt</file>
+                                                <file>${project.basedir}/readme.sources.txt</file>
+                                            </files>
+                                        </requireFilesExist>
+                                    </rules>
                                 </configuration>
                             </execution>
                         </executions>
