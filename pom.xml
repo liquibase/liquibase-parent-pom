@@ -856,7 +856,7 @@
                 <dependency>
                     <groupId>org.liquibase</groupId>
                     <artifactId>liquibase-test-harness</artifactId>
-                    <version>master-SNAPSHOT</version>
+                    <version>1.0.11</version>
                 </dependency>
             </dependencies>
         </profile>
