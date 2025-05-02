@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project
     xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -52,20 +52,15 @@
         <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
         <sonar.sources>src/main/java</sonar.sources>
         <sonar.tests>src/test/java</sonar.tests>
-        <sonar.coverage.jacoco.xmlReportPaths
-        >target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.projectKey>liquibase_${project.artifactId}</sonar.projectKey>
-        <sonar.projectDescription
-        >${project.description}</sonar.projectDescription>
+        <sonar.projectDescription>${project.description}</sonar.projectDescription>
         <!-- Plugin versions -->
         <assertj.version>3.27.3</assertj.version>
-        <buildnumber-maven-plugin.version
-        >3.2.1</buildnumber-maven-plugin.version>
-        <build-helper-maven-plugin.version
-        >3.6.0</build-helper-maven-plugin.version>
+        <buildnumber-maven-plugin.version>3.2.1</buildnumber-maven-plugin.version>
+        <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
         <commons-io.version>2.18.0</commons-io.version>
-        <copy-rename-maven-plugin.version
-        >1.0.1</copy-rename-maven-plugin.version>
+        <copy-rename-maven-plugin.version>1.0.1</copy-rename-maven-plugin.version>
         <gmavenplus-plugin.version>3.0.2</gmavenplus-plugin.version>
         <groovy-all.version>4.0.24</groovy-all.version>
         <hamcrest.version>1.3</hamcrest.version>
@@ -91,8 +86,7 @@
         <mockito-core.version>5.14.2</mockito-core.version>
         <mockito-junit-jupiter.version>5.14.2</mockito-junit-jupiter.version>
         <mssql.version>12.9.0.jre8-preview</mssql.version>
-        <nexus-staging-maven-plugin.version
-        >1.7.0</nexus-staging-maven-plugin.version>
+        <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <oracle.version>21.16.0.0</oracle.version>
         <org-json.version>20250107</org-json.version>
         <postgresql.version>42.7.4</postgresql.version>
@@ -115,8 +109,7 @@
         <repository>
             <id>sonatype-nexus-staging</id>
             <name>Nexus Release Repository</name>
-            <url
-            >https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
             <id>sonatype-nexus-staging</id>
@@ -362,8 +355,8 @@
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <reportFormat>plain</reportFormat>
                     <systemPropertyVariables>
-                        <com.athaydes.spockframework.report.outputDir
-                        >${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
+                        <com.athaydes.spockframework.report.outputDir>
+                            ${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -375,8 +368,8 @@
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <reportFormat>plain</reportFormat>
                     <systemPropertyVariables>
-                        <com.athaydes.spockframework.report.outputDir
-                        >${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
+                        <com.athaydes.spockframework.report.outputDir>
+                            ${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
                     </systemPropertyVariables>
                 </configuration>
                 <executions>
@@ -395,16 +388,11 @@
                     <archive>
                         <manifestEntries>
                             <Specification-Title>Liquibase</Specification-Title>
-                            <Specification-Version
-                            >${liquibase.version}</Specification-Version>
-                            <Specification-Vendor
-                            >Liquibase.org</Specification-Vendor>
-                            <Implementation-Title
-                            >${project.artifactId}-${project.version}</Implementation-Title>
-                            <Implementation-Version
-                            >${project.version}</Implementation-Version>
-                            <Implementation-Vendor
-                            >Liquibase</Implementation-Vendor>
+                            <Specification-Version>${liquibase.version}</Specification-Version>
+                            <Specification-Vendor>Liquibase.org</Specification-Vendor>
+                            <Implementation-Title>${project.artifactId}-${project.version}</Implementation-Title>
+                            <Implementation-Version>${project.version}</Implementation-Version>
+                            <Implementation-Vendor>Liquibase</Implementation-Vendor>
                         </manifestEntries>
                     </archive>
                 </configuration>
@@ -447,8 +435,7 @@
                 <configuration>
                     <doCheck>false</doCheck>
                     <doUpdate>false</doUpdate>
-                    <timestampFormat
-                    >${maven.build.timestamp.format}</timestampFormat>
+                    <timestampFormat>${maven.build.timestamp.format}</timestampFormat>
                 </configuration>
             </plugin>
         </plugins>
@@ -495,8 +482,7 @@
                                 <configuration>
                                     <testSources>
                                         <testSource>
-                                            <directory
-                                            >${project.basedir}/src/test/</directory>
+                                            <directory>${project.basedir}/src/test/</directory>
                                             <includes>
                                                 <include>**/**.groovy</include>
                                             </includes>
@@ -565,10 +551,9 @@
                                 <configuration>
                                     <fileSets>
                                         <fileSet>
-                                            <sourceFile
-                                            >${project.basedir}/pom.xml</sourceFile>
-                                            <destinationFile
-                                            >${project.basedir}/target/${project.artifactId}-${project.version}.pom</destinationFile>
+                                            <sourceFile>${project.basedir}/pom.xml</sourceFile>
+                                            <destinationFile>
+                                                ${project.basedir}/target/${project.artifactId}-${project.version}.pom</destinationFile>
                                         </fileSet>
                                     </fileSets>
                                 </configuration>
@@ -612,8 +597,7 @@
                             <quiet>true</quiet>
                             <doclint>none</doclint>
                             <encoding>UTF-8</encoding>
-                            <includeDependencySources
-                            >false</includeDependencySources>
+                            <includeDependencySources>false</includeDependencySources>
                         </configuration>
                         <executions>
                             <execution>
@@ -685,8 +669,7 @@
                 </repository>
                 <repository>
                     <id>liquibase-pro</id>
-                    <url
-                    >https://maven.pkg.github.com/liquibase/liquibase-pro</url>
+                    <url>https://maven.pkg.github.com/liquibase/liquibase-pro</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
@@ -707,18 +690,12 @@
                         <configuration>
                             <archive>
                                 <manifestEntries>
-                                    <Specification-Title
-                                    >Liquibase</Specification-Title>
-                                    <Specification-Version
-                                    >${liquibase.version}</Specification-Version>
-                                    <Specification-Vendor
-                                    >Liquibase.org</Specification-Vendor>
-                                    <Implementation-Title
-                                    >${project.artifactId}-${project.version}</Implementation-Title>
-                                    <Implementation-Version
-                                    >${project.version}</Implementation-Version>
-                                    <Implementation-Vendor
-                                    >Liquibase</Implementation-Vendor>
+                                    <Specification-Title>Liquibase</Specification-Title>
+                                    <Specification-Version>${liquibase.version}</Specification-Version>
+                                    <Specification-Vendor>Liquibase.org</Specification-Vendor>
+                                    <Implementation-Title>${project.artifactId}-${project.version}</Implementation-Title>
+                                    <Implementation-Version>${project.version}</Implementation-Version>
+                                    <Implementation-Vendor>Liquibase</Implementation-Vendor>
                                 </manifestEntries>
                             </archive>
                         </configuration>
@@ -731,14 +708,12 @@
                                 </goals>
                                 <configuration>
                                     <classifier>javadoc</classifier>
-                                    <classesDirectory
-                                    >${project.basedir}</classesDirectory>
+                                    <classesDirectory>${project.basedir}</classesDirectory>
                                     <includes>
                                         <include>readme.javadocs.txt</include>
                                     </includes>
                                     <archive>
-                                        <addMavenDescriptor
-                                        >false</addMavenDescriptor>
+                                        <addMavenDescriptor>false</addMavenDescriptor>
                                     </archive>
                                 </configuration>
                             </execution>
@@ -750,14 +725,12 @@
                                 </goals>
                                 <configuration>
                                     <classifier>sources</classifier>
-                                    <classesDirectory
-                                    >${project.basedir}</classesDirectory>
+                                    <classesDirectory>${project.basedir}</classesDirectory>
                                     <includes>
                                         <include>readme.sources.txt</include>
                                     </includes>
                                     <archive>
-                                        <addMavenDescriptor
-                                        >false</addMavenDescriptor>
+                                        <addMavenDescriptor>false</addMavenDescriptor>
                                     </archive>
                                 </configuration>
                             </execution>
@@ -773,11 +746,9 @@
                                     <goal>proguard</goal>
                                 </goals>
                                 <configuration>
-                                    <addMavenDescriptor
-                                    >true</addMavenDescriptor>
+                                    <addMavenDescriptor>true</addMavenDescriptor>
                                     <includeDependency>true</includeDependency>
-                                    <includeDependencyInjar
-                                    >false</includeDependencyInjar>
+                                    <includeDependencyInjar>false</includeDependencyInjar>
                                     <libs combine.children="append">
                                         <lib>${java.home}/jmods/</lib>
                                     </libs>
@@ -835,40 +806,28 @@
                                             *;
                                             }
                                         </option>
-                                        <option
-                                        >-dontwarn software.amazon.**</option>
+                                        <option>-dontwarn software.amazon.**</option>
                                         <option>-dontwarn org.slf4j.**</option>
                                         <option>-dontwarn org.apache.**</option>
                                         <option>-dontwarn io.netty.**</option>
-                                        <option
-                                        >-dontwarn com.fasterxml.**</option>
-                                        <option
-                                        >-dontwarn org.graalvm.**</option>
+                                        <option>-dontwarn com.fasterxml.**</option>
+                                        <option>-dontwarn org.graalvm.**</option>
                                         <option>-dontwarn com.oracle.**</option>
-                                        <option
-                                        >-dontwarn io.micrometer.**</option>
+                                        <option>-dontwarn io.micrometer.**</option>
                                         <option>-dontwarn kotlin.**</option>
-                                        <option
-                                        >-dontwarn org.jetbrains.**</option>
-                                        <option
-                                        >-dontwarn org.opensaml.**</option>
+                                        <option>-dontwarn org.jetbrains.**</option>
+                                        <option>-dontwarn org.opensaml.**</option>
                                         <option>-dontwarn com.google.**</option>
-                                        <option
-                                        >-dontwarn org.bouncycastle.**</option>
-                                        <option
-                                        >-dontwarn javax.servlet.**</option>
-                                        <option
-                                        >-dontwarn jakarta.servlet.**</option>
+                                        <option>-dontwarn org.bouncycastle.**</option>
+                                        <option>-dontwarn javax.servlet.**</option>
+                                        <option>-dontwarn jakarta.servlet.**</option>
                                         <option>-dontwarn reactor.**</option>
                                         <option>-dontwarn org.joda.**</option>
-                                        <option
-                                        >-dontwarn net.shibboleth.**</option>
-                                        <option
-                                        >-dontwarn org.cryptomator.**</option>
-                                        <option
-                                        >-dontwarn java.lang.invoke.**</option>
-                                        <option
-                                        >-keepattributes *Annotation*,EnclosingMethod,Signature</option>
+                                        <option>-dontwarn net.shibboleth.**</option>
+                                        <option>-dontwarn org.cryptomator.**</option>
+                                        <option>-dontwarn java.lang.invoke.**</option>
+                                        <option>-keepattributes
+                                            *Annotation*,EnclosingMethod,Signature</option>
                                     </options>
                                 </configuration>
                             </execution>
@@ -887,10 +846,8 @@
                                     <rules>
                                         <requireFilesExist>
                                             <files>
-                                                <file
-                                                >${project.basedir}/readme.javadocs.txt</file>
-                                                <file
-                                                >${project.basedir}/readme.sources.txt</file>
+                                                <file>${project.basedir}/readme.javadocs.txt</file>
+                                                <file>${project.basedir}/readme.sources.txt</file>
                                             </files>
                                         </requireFilesExist>
                                     </rules>
