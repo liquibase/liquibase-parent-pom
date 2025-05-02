@@ -8,8 +8,8 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  
+
 jobs:
   release:
-    uses: liquibase/build-logic/.github/workflows/pom-release-published.yml@main
+    uses: liquibase/build-logic/.github/workflows/pom-release-published.yml@DAT-20127
     secrets: inherit

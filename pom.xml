@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent-pom</artifactId>
     <name>Liquibase Parent POM</name>
-    <version>0.6.0-SNAPSHOT</version>
+    <version>0.5.9-SNAPSHOT</version>
     <description>Liquibase Parent POM for all Extensions</description>
     <url>https://github.com/liquibase/liquibase-parent-pom</url>
     <packaging>pom</packaging>
@@ -351,7 +355,8 @@
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <reportFormat>plain</reportFormat>
                     <systemPropertyVariables>
-                        <com.athaydes.spockframework.report.outputDir>${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
+                        <com.athaydes.spockframework.report.outputDir>
+                            ${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -363,7 +368,8 @@
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <reportFormat>plain</reportFormat>
                     <systemPropertyVariables>
-                        <com.athaydes.spockframework.report.outputDir>${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
+                        <com.athaydes.spockframework.report.outputDir>
+                            ${project.build.directory}/spock-reports</com.athaydes.spockframework.report.outputDir>
                     </systemPropertyVariables>
                 </configuration>
                 <executions>
@@ -546,7 +552,8 @@
                                     <fileSets>
                                         <fileSet>
                                             <sourceFile>${project.basedir}/pom.xml</sourceFile>
-                                            <destinationFile>${project.basedir}/target/${project.artifactId}-${project.version}.pom</destinationFile>
+                                            <destinationFile>
+                                                ${project.basedir}/target/${project.artifactId}-${project.version}.pom</destinationFile>
                                         </fileSet>
                                     </fileSets>
                                 </configuration>
@@ -819,7 +826,8 @@
                                         <option>-dontwarn net.shibboleth.**</option>
                                         <option>-dontwarn org.cryptomator.**</option>
                                         <option>-dontwarn java.lang.invoke.**</option>
-                                        <option>-keepattributes *Annotation*,EnclosingMethod,Signature</option>
+                                        <option>-keepattributes
+                                            *Annotation*,EnclosingMethod,Signature</option>
                                     </options>
                                 </configuration>
                             </execution>
