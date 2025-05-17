@@ -1,5 +1,10 @@
 name: Attach Artifact to Release
 
+permissions:
+  contents: write
+  id-token: write
+  pull-requests: write
+  
 on:
   workflow_dispatch:
   pull_request:
@@ -48,7 +53,7 @@ jobs:
       - name: Get latest draft release ID
         id: get-release
         run: |
-          LATEST_DRAFT_RELEASE=$(curl -X GET -H "Authorization: token ${{ secrets.BOT_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases?per_page=1" | jq -r 'if .[].draft == true then .[].id else empty end')
+          LATEST_DRAFT_RELEASE=$(curl -X GET -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases?per_page=1" | jq -r 'if .[].draft == true then .[].id else empty end')
           echo "Latest Draft Release ID: $LATEST_DRAFT_RELEASE"
           echo "RELEASE_ID=$LATEST_DRAFT_RELEASE" >> $GITHUB_ENV
 
@@ -57,7 +62,7 @@ jobs:
         id: list-artifacts
         run: |
           RELEASE_ID="${{ env.RELEASE_ID }}"
-          ARTIFACTS=$(curl -X GET -H "Authorization: token ${{ secrets.BOT_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases/$RELEASE_ID/assets" | jq -r '.[].id')
+          ARTIFACTS=$(curl -X GET -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases/$RELEASE_ID/assets" | jq -r '.[].id')
           echo "Artifacts to delete: $ARTIFACTS"
           ARTIFACTS_CLEANED=$(echo "$ARTIFACTS" | tr -s '[:space:]' ',' | sed 's/,$//')
           echo "ARTIFACTS_TO_DELETE=$ARTIFACTS_CLEANED" >> $GITHUB_ENV
@@ -69,7 +74,7 @@ jobs:
           ARTIFACTS_TO_DELETE="${{ env.ARTIFACTS_TO_DELETE }}"
           IFS=',' read -ra values <<< "$ARTIFACTS_TO_DELETE"
           for value in "${values[@]}"; do
-            curl -X DELETE -H "Authorization: token ${{ secrets.BOT_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases/assets/$value"
+            curl -X DELETE -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases/assets/$value"
             echo "Deleted artifact ID: $value"
           done
 
@@ -90,7 +95,7 @@ jobs:
         id: upload-release-asset
         run: ./.github/upload_asset.sh $(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
         env:
-          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ASSET_NAME_PREFIX: "${{ env.artifact_id }}-"
           ASSET_DIR: ./target
           
