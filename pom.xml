@@ -81,7 +81,7 @@
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <mockito-core.version>5.18.0</mockito-core.version>
         <mockito-junit-jupiter.version>5.18.0</mockito-junit-jupiter.version>
-        <mssql.version>12.9.0.jre8-preview</mssql.version>
+        <mssql.version>13.1.0.jre8-preview</mssql.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <oracle.version>21.18.0.0</oracle.version>
         <org-json.version>20250107</org-json.version>
