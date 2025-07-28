@@ -1,4 +1,4 @@
-name: Release Extension to Sonatype
+name: Release POM to Sonatype
 
 on:
   workflow_dispatch:
@@ -8,10 +8,8 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  packages: write
-  id-token: write
-
+  
 jobs:
   release:
-    uses: liquibase/build-logic/.github/workflows/extension-release-published.yml@main
+    uses: liquibase/build-logic/.github/workflows/pom-release-published.yml@main
     secrets: inherit
