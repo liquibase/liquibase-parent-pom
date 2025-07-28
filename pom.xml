@@ -63,7 +63,7 @@
         <jackson.version>2.19.1</jackson.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <jupiter.version>5.13.3</jupiter.version>
-        <junit-platform.version>1.13.3</junit-platform.version>
+        <junit-platform.version>1.13.4</junit-platform.version>
         <jsonassert.version>1.5.3</jsonassert.version>
         <hsqldb.version>2.7.4</hsqldb.version>
         <h2.version>2.3.232</h2.version>
