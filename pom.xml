@@ -36,8 +36,8 @@
     <properties>
         <!-- Project build properties -->
         <ci.buildNumber>${env.GITHUB_RUN_ID}</ci.buildNumber>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Liquibase -->
         <liquibase.version>4.33.0</liquibase.version>
