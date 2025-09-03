@@ -25,6 +25,7 @@ jobs:
     needs: authorize
     uses: liquibase/build-logic/.github/workflows/os-extension-test.yml@main
     secrets: inherit
+    skipSonar: true
 
   dependabot:
     needs: build-test
