@@ -92,7 +92,7 @@
         <spock-core.version>2.3-groovy-4.0</spock-core.version>
         <spock-reports.version>2.5.1-groovy-4.0</spock-reports.version>
         <slf4j.version>2.0.9</slf4j.version>
-        <versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
+        <versions-maven-plugin.version>2.19.0</versions-maven-plugin.version>
     </properties>
 
     <scm>
