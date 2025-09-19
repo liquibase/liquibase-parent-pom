@@ -85,7 +85,7 @@
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <oracle.version>21.19.0.0</oracle.version>
         <org-json.version>20250517</org-json.version>
-        <postgresql.version>42.7.7</postgresql.version>
+        <postgresql.version>42.7.8</postgresql.version>
         <proguard-maven-plugin.version>2.7.0</proguard-maven-plugin.version>
         <sonar-maven-plugin.version>5.2.0.4988</sonar-maven-plugin.version>
         <snakeyaml.version>2.5</snakeyaml.version>
