@@ -37,7 +37,7 @@ jobs:
       - name: Configure Git
         run: |
           git config user.name "liquibase-workflows[bot]"
-          git config user.email "liquibot@liquibase.org"
+          git config user.email "1241802+liquibase-workflows[bot]@users.noreply.github.com"
 
       - name: Build release artifacts
         id: build-release-artifacts
