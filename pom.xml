@@ -453,7 +453,7 @@
                     <plugin>
                         <groupId>org.liquibase.ext</groupId>
                         <artifactId>liquibase-sdk-maven-plugin</artifactId>
-                        <version>0.10.25</version>
+                        <version>0.11.0</version>
                         <configuration>
                             <githubToken>${env.GITHUB_TOKEN}</githubToken>
                         </configuration>
@@ -640,7 +640,7 @@
                     <dependency>
                         <groupId>software.amazon.awssdk</groupId>
                         <artifactId>bom</artifactId>
-                        <version>2.34.5</version>
+                        <version>2.38.2</version>
                         <type>pom</type>
                         <scope>import</scope>
                     </dependency>
