@@ -89,7 +89,7 @@
         <proguard-maven-plugin.version>2.7.0</proguard-maven-plugin.version>
         <sonar-maven-plugin.version>5.5.0.6356</sonar-maven-plugin.version>
         <snakeyaml.version>2.5</snakeyaml.version>
-        <spock-core.version>2.3-groovy-4.0</spock-core.version>
+        <spock-core.version>2.4-groovy-5.0</spock-core.version>
         <spock-reports.version>2.5.1-groovy-4.0</spock-reports.version>
         <slf4j.version>2.0.9</slf4j.version>
         <versions-maven-plugin.version>2.20.1</versions-maven-plugin.version>
