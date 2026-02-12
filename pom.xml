@@ -86,7 +86,7 @@
         <oracle.version>21.20.0.0</oracle.version>
         <org-json.version>20251224</org-json.version>
 
-        <postgresql.version>42.7.9</postgresql.version>
+        <postgresql.version>42.7.10</postgresql.version>
         <proguard-maven-plugin.version>2.7.0</proguard-maven-plugin.version>
         <sonar-maven-plugin.version>5.5.0.6356</sonar-maven-plugin.version>
         <snakeyaml.version>2.5</snakeyaml.version>
