@@ -79,7 +79,7 @@
     <mockito-junit-jupiter.version>5.22.0</mockito-junit-jupiter.version>
     <mssql.version>12.10.2.jre11</mssql.version>
     <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
-    <oracle.version>21.20.0.0</oracle.version>
+    <oracle.version>21.21.0.0</oracle.version>
     <org-json.version>20251224</org-json.version>
     <postgresql.version>42.7.10</postgresql.version>
     <proguard-maven-plugin.version>2.7.0</proguard-maven-plugin.version>
