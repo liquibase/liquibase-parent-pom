@@ -51,7 +51,7 @@
     <assertj.version>3.27.7</assertj.version>
     <buildnumber-maven-plugin.version>3.3.0</buildnumber-maven-plugin.version>
     <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
-    <commons-io.version>2.21.0</commons-io.version>
+    <commons-io.version>2.22.0</commons-io.version>
     <copy-rename-maven-plugin.version>1.0.1</copy-rename-maven-plugin.version>
     <gmavenplus-plugin.version>4.3.1</gmavenplus-plugin.version>
     <groovy-all.version>5.0.5</groovy-all.version>
