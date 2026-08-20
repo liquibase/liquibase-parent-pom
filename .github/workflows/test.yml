@@ -2,9 +2,6 @@ name: Build and Test
 
 on:
   workflow_dispatch:
-  # Use pull_request (not pull_request_target) so PRs never run with repository
-  # secrets over an untrusted checkout. Same-repo PRs still receive secrets and
-  # build normally; forked PRs run without secrets.
   pull_request:
     types:
       - opened
@@ -12,7 +9,7 @@ on:
       - synchronize
 
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
   packages: read
   id-token: write
@@ -20,9 +17,4 @@ permissions:
 jobs:
   build-test:
     uses: liquibase/build-logic/.github/workflows/os-extension-test.yml@main
-    secrets: inherit
-
-  dependabot:
-    needs: build-test
-    uses: liquibase/build-logic/.github/workflows/dependabot-automerge.yml@main
     secrets: inherit
