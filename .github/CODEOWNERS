@@ -1,2 +1,3 @@
-/.github/workflows/     @liquibase/liquibase-devops
-/.github/CODEOWNERS     @liquibase/liquibase-devops
+/.github/workflows/       @liquibase/liquibase-devops
+/.github/upload_asset.sh  @liquibase/liquibase-devops
+/.github/CODEOWNERS       @liquibase/liquibase-devops
