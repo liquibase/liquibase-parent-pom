@@ -36,7 +36,7 @@
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Liquibase -->
-    <liquibase.version>5.0.3</liquibase.version>
+    <liquibase.version>5.0.4</liquibase.version>
     <!-- SonarCloud -->
     <sonar.organization>liquibase</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -79,7 +79,7 @@
     <mockito-junit-jupiter.version>5.23.0</mockito-junit-jupiter.version>
     <mssql.version>12.10.2.jre11</mssql.version>
     <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
-    <oracle.version>21.22.0.0</oracle.version>
+    <oracle.version>21.23.0.0</oracle.version>
     <org-json.version>20260719</org-json.version>
     <postgresql.version>42.7.13</postgresql.version>
     <proguard-maven-plugin.version>2.7.0</proguard-maven-plugin.version>
@@ -440,7 +440,7 @@
     <profile>
       <id>snapshot</id>
       <properties>
-        <liquibase.version>5.0.3</liquibase.version>
+        <liquibase.version>5.0.4</liquibase.version>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
@@ -637,7 +637,7 @@
           <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>bom</artifactId>
-            <version>2.53.1</version>
+            <version>2.54.1</version>
             <type>pom</type>
             <scope>import</scope>
           </dependency>
