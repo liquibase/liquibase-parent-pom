@@ -18,4 +18,3 @@ permissions:
 jobs:
   dependabot:
     uses: liquibase/build-logic/.github/workflows/dependabot-automerge.yml@main
-    secrets: inherit
