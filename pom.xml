@@ -49,7 +49,7 @@
     <sonar.projectDescription>${project.description}</sonar.projectDescription>
     <!-- Plugin versions -->
     <assertj.version>3.27.7</assertj.version>
-    <buildnumber-maven-plugin.version>3.3.0</buildnumber-maven-plugin.version>
+    <buildnumber-maven-plugin.version>3.3.1</buildnumber-maven-plugin.version>
     <build-helper-maven-plugin.version>3.6.2</build-helper-maven-plugin.version>
     <commons-io.version>2.22.0</commons-io.version>
     <copy-rename-maven-plugin.version>1.0.1</copy-rename-maven-plugin.version>
